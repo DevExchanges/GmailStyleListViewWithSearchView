@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">ListView with Letter Icon</string>
+    <string name="app_name">Filter ListView by SearchView</string>
     <string name="action_settings">Settings</string>
 </resources>

@@ -10,8 +10,10 @@ import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -32,12 +34,19 @@ public class MainActivity extends AppCompatActivity {
         setData();
         adapter = new ListViewAdapter(this, R.layout.item_listview, stringArrayList);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(MainActivity.this, (String)parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void setData() {
         stringArrayList = new ArrayList<>();
         stringArrayList.add("Quynh Trang");
-        stringArrayList.add("Hoang Biên");
+        stringArrayList.add("Hoang Bien");
         stringArrayList.add("Duc Tuan");
         stringArrayList.add("Dang Thanh");
         stringArrayList.add("Xuan Luu");
@@ -45,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         stringArrayList.add("Kim Kien");
         stringArrayList.add("Ngo Trang");
         stringArrayList.add("Thanh Ngan");
-        stringArrayList.add("Nguyen Dương");
+        stringArrayList.add("Nguyen Duong");
         stringArrayList.add("Quoc Cuong");
         stringArrayList.add("Tran Ha");
         stringArrayList.add("Vu Danh");
